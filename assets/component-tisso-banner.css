@@ -1,0 +1,214 @@
+.banner-sect .container {
+  max-width: 1367px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+/* topbar css */
+.banner-sect .banner-header {
+  display: flex;
+  padding: 22.5px 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner-sect .top-bar {
+  background-color: #f5f5f5;
+  position: relative;
+}
+.banner-sect .banner-header .logo {
+  width: 20%;
+}
+.banner-sect .banner-header .header-btn {
+  width: 20%;
+  text-align: end;
+}
+.banner-sect .banner-header .logo img {
+  max-width: 151.44px;
+}
+.banner-sect .banner-header .announcement-bar {
+  max-width: 300px;
+}
+.banner-sect .banner-header .announcement-bar p {
+  line-height: 13.42px;
+  text-align: center;
+  margin: 0;
+}
+.banner-sect .banner-header .header-btn a {
+  padding: 11.67px 22px 11.33px 41px;
+  font-size: 16px;
+  line-height: 20.48px;
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #fff544;
+}
+.banner-sect .banner-header .header-btn a:hover {
+  background-color: #000;
+  color: #fff;
+}
+.banner-sect .banner-header .header-btn a:hover svg {
+  transform: scale(1.2);
+}
+.banner-sect .banner-header .header-btn a:hover path {
+  fill: #fff;
+}
+.banner-sect .banner-header .header-btn a svg {
+  margin-left: 18px;
+  transition: 0.5s all;
+}
+/* banner css */
+.banner-sect .banner {
+  padding: 425px 0px 51px 15px;
+  background-image: url(https://cdn.shopify.com/s/files/1/0739/4780/7959/files/Group_1000008197.png?v=1738148049);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner-sect .banner .content {
+  max-width: 500px;
+}
+.banner-sect .banner .content h1 {
+  margin: 0px;
+  font-size: 70px;
+  line-height: 70px;
+  color: #000;
+}
+.banner-sect .banner .content p {
+  margin: 50px 0px;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000000;
+}
+.banner-sect .banner .banner-btn {
+  padding-bottom: 12px;
+}
+.banner-sect .banner .banner-btn a {
+  padding: 14.26px 23.38px 14.74px 55.07px;
+  font-size: 16px;
+  line-height: 20.48px;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #000;
+}
+.banner-sect .banner .banner-btn a path {
+  fill: #fff;
+}
+.banner-sect .banner .banner-btn a svg {
+  margin-left: 29.04px;
+  transition: 0.5s all;
+}
+.banner-sect .banner .banner-btn a:hover svg {
+  transform: scale(1.2);
+}
+.banner-btm-text {
+  text-align: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+.banner-btm-text p {
+  margin: 0px;
+  font-size: 14px;
+  line-height: 13.42px;
+  color: #000000;
+}
+section.banner-sect .mobile-content {
+  display: none;
+}
+.banner-btm-text.mobile {
+  display: none;
+}
+.menu-mobile-icon,
+.mobile-menu {
+  display: none;
+}
+.menu-mobile-icon .icon-cross {
+  display: none;
+}
+.menu-mobile-icon.active .icon-cross {
+  display: block;
+}
+.menu-mobile-icon .icon-hamburger {
+  display: block;
+}
+.menu-mobile-icon.active .icon-hamburger {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  section.banner-sect .mobile-content {
+    display: block;
+  }
+  section.banner-sect .mobile-content {
+    text-align: center;
+    max-width: 340px;
+    margin: 0 auto;
+    padding-top: 51px;
+  }
+  section.banner-sect .mobile-content h1 {
+    margin: 0px;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 500;
+  }
+  section.banner-sect .mobile-content p {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 20.8px;
+  }
+  .banner-sect .banner .content h1,
+  .banner-sect .banner .content p {
+    display: none;
+  }
+  .banner-sect .banner {
+    padding: 186px 0px 39px 15px;
+    background-image: url(https://cdn.shopify.com/s/files/1/0739/4780/7959/files/Frame_1.png?v=1738239959);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .banner-sect .banner .banner-btn {
+    text-align: center;
+  }
+  .banner-btm-text.desktop {
+    display: none;
+  }
+  .banner-btm-text.mobile {
+    display: block;
+  }
+  section.tisso-vison-product-grid {
+    padding: 40px 0px 23.74px 0px !important;
+  }
+  section.tisso-vison-product-grid h2 {
+    margin: 0px 0px 20px 0px !important;
+    font-size: 24px !important;
+    line-height: 28.8px !important;
+    text-align: center;
+  }
+  .menu-mobile-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+    left: 16px;
+  }
+  .mobile-menu .announcement-bar {
+    display: block !important;
+  }
+  .banner-sect .mobile-menu .header-btn a {
+    padding: 11.67px 22px 11.33px 41px;
+    font-size: 16px;
+    line-height: 20.48px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #fff544;
+  }
+  .mobile-menu {
+    text-align: center;
+    padding-bottom: 25px;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    background-color: #f2f2f2;
+    z-index: 2;
+    display: none;
+  }
+}

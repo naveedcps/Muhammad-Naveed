@@ -46,16 +46,16 @@
           "type": "product",
           "settings": {
             "product": "tailored-jacket",
-            "hotspot_x": 62,
-            "hotspot_y": 75
+            "hotspot_x": 81,
+            "hotspot_y": 48
           }
         },
         "product_Ubwqhz": {
           "type": "product",
           "settings": {
             "product": "accordion-pleated-dress",
-            "hotspot_x": 35,
-            "hotspot_y": 50
+            "hotspot_x": 59,
+            "hotspot_y": 18
           }
         },
         "product_jeLab7": {

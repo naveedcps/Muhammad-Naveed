@@ -71,6 +71,9 @@
   line-height: 70px;
   color: #000;
 }
+.banner-description {
+    margin: 50px 0;
+}
 .banner-sect .banner .content p {
   margin: 0px;
   font-size: 20px;

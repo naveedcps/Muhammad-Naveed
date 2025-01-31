@@ -1,0 +1,159 @@
+{{ 'component-tisso-product-grid.css' | asset_url | stylesheet_tag }}
+<style>
+  {% for block in section.blocks %}
+    section.tisso-vison-product-grid .hotspot.block-{{ block.id }} {
+      top: {{ block.settings.hotspot_y }}%;
+      left: {{ block.settings.hotspot_x }}%;
+    }
+  {% endfor %}
+</style>
+
+<section class="tisso-vison-product-grid">
+  <div class="container">
+    <h2>{{ section.settings.product_grid_title }}</h2>
+
+    <div class="product-grid">
+      {% for block in section.blocks %}
+        {% assign product = block.settings.product %}
+
+        <tisso-product>
+          <div class="inner">
+            <img src="{{ product.featured_image | image_url }}">
+
+            <div class="hotspot block-{{ block.id }}">
+              {% render 'icon-plus' %}
+            </div>
+          </div>
+
+          <div class="hotspot-wrapper">
+            <span class="close">{% render 'icon-cross' %}</span>
+
+            <div class="featured-img-with-content">
+              <div class="featured-img">
+                <img src="{{ product.featured_image | image_url }}">
+              </div>
+              <div class="content">
+                <h3>{{ product.title }}</h3>
+
+                <p class="price">{{ product.price |  money_without_trailing_zeros }}</p>
+
+                <div class="description">{{ product.description }}</div>
+              </div>
+            </div>
+
+            <div class="variations-with-btn">
+              {% assign color_options = "" %}
+              {% assign size_options = "" %}
+
+              {% for variant in product.variants %}
+                {% unless color_options contains variant.option1 %}
+                  {% assign = color_options = color_options | append: variant.option1 | append: "," %}
+                {% endunless %}
+
+                {% unless size_options contains variant.option2 %}
+                  {% assign = size_options = size_options | append: variant.option2 | append: "," %}
+                {% endunless %}
+              {% endfor %}
+
+              <div class="color-variants">
+                <h4>Color</h4>
+
+                {% assign color_array = color_options | split: "," %}
+
+                <div class="color">
+                  {% for color in color_array %}
+                    {% if color != "" %}
+                      <label
+                        {% if color == 'White' %}
+                        class="white"
+                        {% endif %}
+                        style="border-left: 5.81px solid {{ color }};">
+                        {{ color }}
+                        <input
+                          type="radio"
+                          name="color"
+                          value="{{ color }}"
+                          data-option="option1">
+                      </label>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="size-variants">
+                <h4>Size</h4>
+
+                {% assign size_array = size_options | split: "," %}
+
+                <select name="size" data-options="option2">
+                  <option value="">Choose your size</option>
+                  {% for size in size_array %}
+                    {% if size != "" %}
+                      <option value="{{ size }}">{{ size }}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="add-to-cart-btn">
+                <button id="add_to_cart" product-data="{{ product.handle }}">Add to cart {% render 'icon-arrow' %}</button>
+                <a href="/cart" class="view-cart">View Cart</a>
+              </div>
+            </div>
+          </div>
+        </tisso-product>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Tisso Vison Product Grid",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product Grid"
+      }, {
+        "type": "text",
+        "id": "product_grid_title",
+        "label": "Product Grid Title",
+        "default": "Tisso vison in the wild"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Select product"
+          }, {
+            "type": "range",
+            "id": "hotspot_x",
+            "label": "Hotspot X",
+            "default": 50,
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }, {
+            "type": "range",
+            "id": "hotspot_y",
+            "label": "Hotspot Y",
+            "default": 50,
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Tisso Vison Product Grid"
+      }
+    ]
+  }
+{% endschema %}
